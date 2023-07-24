@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import con from "../server/connection.js";
 import { Expose, Transform } from 'class-transformer';
 import { IsDefined, IsNumber } from 'class-validator';
 export class Libros {
@@ -20,6 +21,12 @@ export class Libros {
         this.isbn = ISBN;
         this.num_paginas = PAGES;
         this.id_estado = IDSTATE;
+    }
+    get guardar() {
+        con.query(/*sql*/ `SELECT * FROM libro`, (err, data, fields) => {
+            console.log(data);
+        });
+        return "";
     }
 }
 __decorate([

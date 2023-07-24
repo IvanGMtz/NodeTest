@@ -68,11 +68,11 @@ export class Libros {
 
     }
 
-    // get guardar(){
-    //   con.query(/*sql*/`SELECT * FROM libro`,
-    //   (err, data, fields)=>{
-    //     console.log(data);
-    //   })
-    //   return "";
-    // }
+    get guardar(){
+      con.query(/*sql*/`SELECT * FROM libro`,
+      (err, data, fields)=>{
+        console.log(data);
+      })
+      return "";
+    }
 }

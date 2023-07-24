@@ -5,6 +5,7 @@ const appLibro = Router();
 
 
 appLibro.post("/", proxyLibrary,  (req, res) => {
+    console.log(req.body.guardar);
     con.query(
         /*sql*/ `INSERT INTO libro SET ?`,
         req.body,
